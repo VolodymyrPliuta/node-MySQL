@@ -1,4 +1,3 @@
-module.exports = (function() {
 
   let app = require('express').Router();
 
@@ -44,5 +43,4 @@ module.exports = (function() {
     res.json(queryString)
   })
 
-  return app;
-})()
+module.exports = { postgresRoutes: app }

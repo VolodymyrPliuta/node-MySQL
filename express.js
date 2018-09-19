@@ -4,8 +4,8 @@ const port = 8900
 
 let pg = require('pg');
 let app = express();
-let postgresRoutes = require('./routes/postgres.js');
-let mongoRoutes = require('./routes/mongo.js');
+let { postgresRoutes } = require('./routes/postgres.js');
+let { mongoRoutes } = require('./routes/mongo.js');
 
 app.listen(port);
 console.log('app listening on port ' + port)

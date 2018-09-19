@@ -1,7 +1,5 @@
 
 
-module.exports = (function() {
-
   let app = require('express').Router();
   const MongoClient = require('mongodb').MongoClient
 
@@ -42,5 +40,4 @@ module.exports = (function() {
     .then((result) => { db.collection('newtravel').remove(result[0]) })
   }
 
-  return app
-})()
+module.exports = { mongoRoutes: app }
