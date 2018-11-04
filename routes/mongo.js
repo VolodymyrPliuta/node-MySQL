@@ -34,6 +34,14 @@ app.get('/delete', function (req, res) {
   });
 })
 
+app.get('/query', function(req,res){
+  MongoClient.connect("mongodb://localhost:27017/travel", function(err, db) {
+    console.log('connected successfully to server')
+    //  db.collection('newtravel').insert({ name,lat, lng })
+    res.json('record added')
+  });
+})
+
 function removeSingleRecord(db, count){
   db.collection('newtravel').aggregate([ { $skip: count}, { $limit: 1} ]).toArray()
   .then((result) => { db.collection('newtravel').remove(result[0]) })
